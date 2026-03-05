@@ -12,20 +12,28 @@ public class playermovement : MonoBehaviour
     public float moveX;
     private Animator anim;
     private bool mirror;
+    private AudioSource au;
+    public AudioClip jumpClip;
+    public int maxJumps = 2;
+    private int jumpCount = 0;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        au = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         moveX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump")&& isGround == true) 
+        if (Input.GetButtonDown("Jump")) 
         {
-            Jump();
+            if (isGround || jumpCount < maxJumps)
+            {
+                Jump();
+            }
         }
         if (!isGround) 
         {
@@ -62,6 +70,9 @@ public class playermovement : MonoBehaviour
     {
         rb.AddForce( Vector2.up * jumpForce);
         isGround = false;
+        jumpCount++;
+        au.clip = jumpClip;
+        au.Play();
 
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -69,6 +80,7 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
+            jumpCount = 0;
             anim.SetBool("IsJumping", false);
         }
     }
