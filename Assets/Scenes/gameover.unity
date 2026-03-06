@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 213458529}
   - component: {fileID: 213458528}
   - component: {fileID: 213458527}
-  - component: {fileID: 213458530}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -148,14 +147,14 @@ RectTransform:
   m_GameObject: {fileID: 213458525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.644588, y: 2.644588, z: 2.644588}
+  m_LocalScale: {x: 2.060134, y: 2.060134, z: 2.060134}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1019063910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -447, y: -336}
+  m_AnchoredPosition: {x: -407, y: -250}
   m_SizeDelta: {x: 202.1254, y: 87.6454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213458527
@@ -252,28 +251,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213458525}
   m_CullTransparentMesh: 1
---- !u!95 &213458530
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213458525}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e6b8a615f5a87b4ab5cf04356660f42, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &719106116
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,10 +390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -594,7 +571,6 @@ GameObject:
   - component: {fileID: 1487304485}
   - component: {fileID: 1487304484}
   - component: {fileID: 1487304483}
-  - component: {fileID: 1487304486}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -611,14 +587,14 @@ RectTransform:
   m_GameObject: {fileID: 1487304481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.644588, y: 2.644588, z: 2.644588}
+  m_LocalScale: {x: 2.1536202, y: 2.1536202, z: 2.1536202}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1019063910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 446, y: -353}
+  m_AnchoredPosition: {x: 452, y: -264}
   m_SizeDelta: {x: 202.1254, y: 87.6454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487304483
@@ -715,28 +691,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487304481}
   m_CullTransparentMesh: 1
---- !u!95 &1487304486
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487304481}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e58fa1ba28eca12489fa939fd17ce8e3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2037597495
 GameObject:
   m_ObjectHideFlags: 0
