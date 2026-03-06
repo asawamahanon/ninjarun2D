@@ -50,5 +50,20 @@ public class playerScore : MonoBehaviour
                 PlayerPrefs.SetInt("HighScore", score);
             }
         }
+        else if(other.gameObject.tag == "bigcoin")
+        {
+            score += 100;
+            if(ScoreUI != null)
+            {
+                ScoreUI.text = " " + score.ToString();
+            }
+            Destroy(other.gameObject);
+            au.clip = coinClip;
+            au.Play();
+            if (score > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+        }
     }
 }

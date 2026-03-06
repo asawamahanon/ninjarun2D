@@ -1,7 +1,8 @@
-using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playermovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class playermovement : MonoBehaviour
     public AudioClip jumpClip;
     public int maxJumps = 2;
     private int jumpCount = 0;
+    public bool isKnockbacked = false;
 
     void Start()
     {
@@ -28,9 +30,10 @@ public class playermovement : MonoBehaviour
     void Update()
     {
         moveX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump")) 
-        {
-            if (isGround || jumpCount < maxJumps)
+        if (Input.GetButtonDown("Jump"))
+        {   
+            // ถ้ากระเด็นอยู่ จะไม่ให้กระโดด
+            if (!isKnockbacked&&(isGround || jumpCount < maxJumps))
             {
                 Jump();
             }
@@ -55,7 +58,34 @@ public class playermovement : MonoBehaviour
         {
             FlipPlayer();
         }
+        // --- เพิ่มเงื่อนไข: ถ้าไม่ได้กระเด็นอยู่ ถึงจะยอมให้ผู้เล่นบังคับซ้ายขวาได้ ---
+        if (!isKnockbacked) 
+        {
             rb.linearVelocity = new Vector2(moveX * speed, rb.linearVelocity.y);
+        }
+            
+    }
+    // ฟังก์ชันใหม่ที่เอาไว้เรียกใช้ตอนโดนชน
+    public void ApplyKnockback(Vector2 enemyPosition)
+    {
+        isKnockbacked = true;
+
+        // เช็คว่าศัตรูอยู่ทางซ้ายหรือขวา เพื่อให้กระเด็นไปทิศตรงข้าม
+        int knockbackDir = transform.position.x < enemyPosition.x ? -1 : 1;
+
+        // หยุดความเร็วเดิมก่อนกระเด็น
+        rb.linearVelocity = Vector2.zero;
+
+        // ใส่แรงกระแทก (กระเด็นถอยหลังและเด้งขึ้นบนนิดหน่อย)
+        rb.AddForce(new Vector2(knockbackDir * 8f, 5f), ForceMode2D.Impulse);
+
+        // ให้เวลากระเด็น 0.3 วินาที แล้วกลับมาบังคับได้ปกติ
+        Invoke("ResetKnockback", 0.3f);
+    }
+
+    private void ResetKnockback()
+    {
+        isKnockbacked = false;
     }
 
     private void FlipPlayer()
@@ -82,6 +112,11 @@ public class playermovement : MonoBehaviour
             isGround = true;
             jumpCount = 0;
             anim.SetBool("IsJumping", false);
+        }
+        if (collision.gameObject.CompareTag("level"))
+        {
+            // ใช้ SceneManager แทน Application ครับ
+            SceneManager.LoadScene("Home");
         }
     }
 }
