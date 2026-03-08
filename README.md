@@ -6,3 +6,6 @@ leaning_basicunity
 
 เมื่อผมเรียนพื้นฐานจากคลิปวีดิโอเสร็จก็ไปค้นคว้าหา scripst หรือฟังก์ชันที่ผมสนใจ ไม่ว่าจะเป็น การกระโดด 2 ชั้น เหยียบหัวศัตรูแล้วตาย อมตะเป็นเวลา1.5วิ ระบบจำนวนพลังชีวิต
 ซึ่งฟังก์ชันทั้งหมดผมเรียนรู้จาก Ai ที่ช่วยแก้ไขและอธิบายcodeที่ผิดพลาดและทำให้ผมสร้างเกมNinjaออกมาได้
+
+#ลิงค์สำหรับโหลดเล่นเกมของผมversion1.1
+https://mailrmuttac-my.sharepoint.com/:u:/r/personal/1166109050540_mail_rmutt_ac_th/Documents/Microsoft%20Teams%20Chat%20Files/Ninjarunner2DGame.zip?csf=1&web=1&e=Dyh5JL
